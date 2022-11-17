@@ -5,9 +5,9 @@
 [![Gzip Size](https://img.shields.io/bundlephobia/minzip/tinyview.js.svg)](https://unpkg.com/viewerjs/dist/tinyview.js)
 
 ## Features Demo
-<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo1.gif"  height="200"/>
-<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo2.gif"  height="200"/>
-<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo3.gif"  height="200"/>
+<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo1.gif" width="150"/>
+<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo2.gif" width="150"/>
+<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo3.gif" width="150"/>
 
 ## Features
 * Zoom In
