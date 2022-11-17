@@ -5,9 +5,9 @@
 [![Gzip Size](https://img.shields.io/bundlephobia/minzip/tinyview.js.svg)](https://unpkg.com/viewerjs/dist/tinyview.js)
 
 ## Features Demo
-<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo1.gif" width="300"/>
-<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo2.gif" width="300"/>
-<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo3.gif" width="300"/>
+<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo1.gif" width="150"/>
+<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo2.gif" width="150"/>
+<img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo3.gif" width="150"/>
 
 ## Features
 * Zoom In
@@ -45,3 +45,19 @@ In browser:
 <link  href="/path/to/tinyview.css" rel="stylesheet">
 <script src="/path/to/tinyview.js"></script>
 ```
+### Example
+```
+<html>
+    <body>
+        <img width="200px" id="elem1" src="./image1.jpg">
+        <img width="200px" id="elem2" src="./image2.jpg">
+    </body>
+  
+    <script>
+        const elem1 = document.getElementById("elem1");
+        const elem2 = document.getElementById("elem2");
+        const tinyview = new TinyView(elem1, elem2);
+    </script>
+</html>
+```
+
