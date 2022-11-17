@@ -3,6 +3,8 @@
 
 [![Version](https://img.shields.io/npm/v/tinyview.js.svg)](https://www.npmjs.com/package/tinyview.js) 
 [![Gzip Size](https://img.shields.io/bundlephobia/minzip/tinyview.js.svg)](https://unpkg.com/viewerjs/dist/tinyview.js)
+![Demo](https://github.com/jacksonCV1114/TinyView/blob/main/zoom.gif)
+
 
 ## Features
 * Zoom In
