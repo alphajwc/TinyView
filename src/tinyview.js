@@ -166,6 +166,9 @@ class TinyView {
             this.canvasImage.addEventListener('mouseup', () => {
                 this.mouseDrag = false;
             });
+            this.canvasImage.addEventListener('mouseout', () => {
+                this.mouseDrag = false;
+            });
 
             this.canvasImage.addEventListener('mousemove', (elem) => {
                 if (this.mouseDrag) {
