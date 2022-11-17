@@ -3,9 +3,9 @@
 
 [![Version](https://img.shields.io/npm/v/tinyview.js.svg)](https://www.npmjs.com/package/tinyview.js) 
 [![Gzip Size](https://img.shields.io/bundlephobia/minzip/tinyview.js.svg)](https://unpkg.com/viewerjs/dist/tinyview.js)
-![Demo1](https://github.com/jacksonCV1114/TinyView/blob/main/demo1.gif = 250 x 250)
-![Demo2](https://github.com/jacksonCV1114/TinyView/blob/main/demo2.gif = 250 x 250)
-![Demo3](https://github.com/jacksonCV1114/TinyView/blob/main/demo3.gif = 250 x 250)
+![Demo1](https://github.com/jacksonCV1114/TinyView/blob/main/demo1.gif=250x250)
+![Demo2](https://github.com/jacksonCV1114/TinyView/blob/main/demo2.gif=250x250)
+![Demo3](https://github.com/jacksonCV1114/TinyView/blob/main/demo3.gif=250x250)
 ## Features
 * Zoom In
 * Zoom Out
