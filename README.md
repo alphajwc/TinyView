@@ -2,7 +2,7 @@
 > TinyView.js is a lightweight javascript Image Viewer
 
 [![Version](https://img.shields.io/npm/v/tinyview.js.svg)](https://www.npmjs.com/package/tinyview.js) 
-[![Gzip Size](https://img.shields.io/bundlephobia/minzip/tinyview.js.svg)](https://unpkg.com/viewerjs/dist/tinyview.js)
+[![Gzip Size](https://img.shields.io/bundlephobia/minzip/tinyview.js.svg)](https://unpkg.com/tinyview.js@1.0.3/tinyview.min.js)
 
 ## Features Demo
 <img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo1.gif" width="300"/>
