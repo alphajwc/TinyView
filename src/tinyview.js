@@ -1,127 +1,120 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-/* eslint-disable max-len */
-/* eslint-disable no-invalid-this */
-/* eslint-disable require-jsdoc */
-/* eslint-disable indent */
-
 /** Class representing Tiny View */
-
 class TinyView {
     /**
-    * Create a Tiny View
-    * @constructor
-    * @param {array}images array of img elements
-    */
+      * Create a Tiny View
+      * @constructor
+      * @param {array}images array of img elements
+      */
     constructor(...images) {
         /** Determine if the image is being dragged
-         * @type {Boolean}
-         * @access private mouseDrag*/
+             * @type {Boolean}
+             * @access private mouseDrag*/
         this.mouseDrag = false;
 
         /** Record the mouse down X position
-         * @type {Float}
-        * @access private mouseDownX*/
+             * @type {Float}
+            * @access private mouseDownX*/
         this.mouseDownX = 0;
 
         /** Record the mouse down Y position
-         * @type {Float}
-        * @access private mouseDownY*/
+             * @type {Float}
+            * @access private mouseDownY*/
         this.mouseDownY = 0;
 
         /** Record the image scale value
-         * @type {Integer}
-        * @access private scale*/
+             * @type {Integer}
+            * @access private scale*/
         this.scale = 100;
 
         /** Record the image angle
-         * @type {Float}
-         * @access private angle*/
+             * @type {Float}
+             * @access private angle*/
         this.angle = 0;
 
         /** Store array of img elements from param
-        * @type {Array}
-        * @access private images*/
+            * @type {Array}
+            * @access private images*/
         this.images = images;
 
         /** Store the div element for canvas
-        * @type {HTMLElement}
-        * @access private canvas*/
+            * @type {HTMLElement}
+            * @access private canvas*/
         this.canvas = document.createElement('div');
         this.canvas.id = 'tiny-view-canvas';
 
         /**  Store the div element for scale label
-        * @type {HTMLElement}
-        * @access private scaleLabel*/
+            * @type {HTMLElement}
+            * @access private scaleLabel*/
         this.scaleLabel = document.createElement('div');
         this.scaleLabel.id = 'tiny-view-canvas-label';
 
         /** Store the div element for canvas buttons
-        * @type {HTMLElement}
-        * @access private scale*/
+            * @type {HTMLElement}
+            * @access private scale*/
         this.canvasBtn = document.createElement('ul');
         this.canvasBtn.id = 'tiny-view-canvas-button';
 
         /**  Store the div element for ZoomIn buttons
-        * @type {HTMLElement}
-        * @access private zoomInBtn*/
+            * @type {HTMLElement}
+            * @access private zoomInBtn*/
         this.zoomInBtn = document.createElement('li');
         this.zoomInBtn.classList.add('tiny-view-icon-zoomIn');
         this.canvasBtn.appendChild(this.zoomInBtn);
 
         /**  Store the div element for ZoomOut buttons
-        * @type {HTMLElement}
-        * @access private zoomOutBtn*/
+            * @type {HTMLElement}
+            * @access private zoomOutBtn*/
         this.zoomOutBtn = document.createElement('li');
         this.zoomOutBtn.classList.add('tiny-view-icon-zoomOut');
         this.canvasBtn.appendChild(this.zoomOutBtn);
 
         /**  Store the div element for fullScreen buttons
-        * @type {HTMLElement}
-        * @access private fullScreenBtn*/
+            * @type {HTMLElement}
+            * @access private fullScreenBtn*/
         this.fullScreenBtn = document.createElement('li');
         this.fullScreenBtn.classList.add('tiny-view-icon-fullScreen');
         this.canvasBtn.appendChild(this.fullScreenBtn);
 
         /**  Store the div element for left Rotate buttons
-        * @type {HTMLElement}
-        * @access private leftRotateBtn*/
+            * @type {HTMLElement}
+            * @access private leftRotateBtn*/
         this.leftRotateBtn = document.createElement('li');
         this.leftRotateBtn.classList.add('tiny-view-icon-leftRotate');
         this.canvasBtn.appendChild(this.leftRotateBtn);
 
         /**  Store the div element for right Rotate buttons
-        * @type {HTMLElement}
-        * @access private rightRotateBtn*/
+            * @type {HTMLElement}
+            * @access private rightRotateBtn*/
         this.rightRotateBtn = document.createElement('li');
         this.rightRotateBtn.classList.add('tiny-view-icon-rightRotate');
         this.canvasBtn.appendChild(this.rightRotateBtn);
 
         /**  Store the div element for Loader icon
-        * @type {HTMLElement}
-        * @access private loader*/
+            * @type {HTMLElement}
+            * @access private loader*/
         this.loader = document.createElement('div');
         this.loader.classList.add('tiny-view-loader');
         this.canvasBtn.appendChild(this.loader);
 
         /**  Store the div element for canvas Image
-        * @type {HTMLElement}
-        * @access private canvasImage*/
+            * @type {HTMLElement}
+            * @access private canvasImage*/
         this.canvasImage = document.createElement('img');
         this.canvasImage.id = 'tiny-view-canvas-image';
 
         /**
-         * Called by constructor by binding Events for class memebers of HTML elements or document object
-         * zoomInBtn : onclick
-         * zoomOutBtn : onclick
-         * fullScreenBtn : onclick
-         * leftRotateBtn : onclick
-         * rightRotateBtn : onclick
-         * canvas: onclick,wheel
-         * canvasImage: mosueDown,mouseEnter,mosueUp,wheel
-         * scaleLabel: animationed
-         * window: onresize
-         * **/
+             * Called by constructor by binding Events for class memebers of HTML elements or document object
+             * zoomInBtn : onclick
+             * zoomOutBtn : onclick
+             * fullScreenBtn : onclick
+             * leftRotateBtn : onclick
+             * rightRotateBtn : onclick
+             * canvas: onclick,wheel
+             * canvasImage: mosueDown,mouseEnter,mosueUp,wheel
+             * scaleLabel: animationed
+             * window: onresize
+             * **/
         const bindEvent = () => {
             this.zoomInBtn.addEventListener('click', (event) => {
                 event.deltaY = -100;
@@ -203,9 +196,9 @@ class TinyView {
 
 
         /**
-         * added htlm elements to DOM.
-         * bind the click event of the each img element of the args with the openView function
-         * **/
+             * added htlm elements to DOM.
+             * bind the click event of the each img element of the args with the openView function
+             * **/
         document.body.appendChild(this.scaleLabel);
         document.body.appendChild(this.canvasBtn);
         document.body.appendChild(this.canvasImage);
@@ -218,10 +211,10 @@ class TinyView {
 
 
     /**
-     * Scale Image using scale value (+/- 5) calculated from the deltaY value passed from the event param. Change the transform style and the text content of the canvasImage using the scale value
-     * @param {object} event event object
-     * @return {void}
-     */
+       * Scale Image using scale value (+/- 5) calculated from the deltaY value passed from the event param. Change the transform style and the text content of the canvasImage using the scale value
+       * @param {object} event event object
+       * @return {void}
+       */
     scaleImage(event) {
         event.preventDefault();
         const temp = this.scale + Math.round(event.deltaY * -0.01 * 5);
@@ -233,12 +226,12 @@ class TinyView {
         }
     }
     /**
-     * Add style to each object in Array.
-     * @param {Array} elems array of HTML elements
-     * @param {string} property style name
-     * @param {string} value style value
-     * @return {void}
-     */
+       * Add style to each object in Array.
+       * @param {Array} elems array of HTML elements
+       * @param {string} property style name
+       * @param {string} value style value
+       * @return {void}
+       */
 
     addStyle([...elems], property, value) {
         elems.forEach((elem) => {
@@ -247,10 +240,10 @@ class TinyView {
     }
 
     /**
-    * Set canvas,scalelabel,canvasImage,loader and canvasbtn to visible and to corresponding poistion.
-    * @param {string} imageSrc corresponding image src from img element binded before
-    * @return {void}
-    */
+      * Set canvas,scalelabel,canvasImage,loader and canvasbtn to visible and to corresponding poistion.
+      * @param {string} imageSrc corresponding image src from img element binded before
+      * @return {void}
+      */
 
     openView(imageSrc) {
         this.addStyle([this.canvasImage, this.canvas, this.loader], 'display', 'block');
