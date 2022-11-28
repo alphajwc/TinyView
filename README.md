@@ -9,6 +9,9 @@
 <img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo2.gif" width="300"/>
 <img src="https://github.com/jacksonCV1114/TinyView/blob/main/Demo3.gif" width="300"/>
 
+## Demo Website
+[Click Here - Demo Website](https://htmlpreview.github.io/?https://github.com/jacksonCV1114/tinyview/blob/master/demo/canvas.html)
+
 ## Features
 * Zoom In
 * Zoom Out
