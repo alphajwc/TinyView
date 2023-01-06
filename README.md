@@ -49,7 +49,7 @@ In browser:
 <script src="/path/to/tinyview.js"></script>
 ```
 ### Example
-```
+```jsx
 <html>
     <body>
         <img width="200px" id="elem1" src="./image1.jpg">
